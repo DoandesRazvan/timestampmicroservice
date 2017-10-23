@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
 	res.send('<p>An app that converts dates to unix code and viceversa. Try it out!</p> <code>http://localhost:3000/October%2023,%202017</code> <br> <code>http://localhost:3000/1508713200</code>')
@@ -23,4 +23,4 @@ app.get('/:id', (req, res) => {
 	});
 })
 
-app.listen(port)
+app.listen(port);
